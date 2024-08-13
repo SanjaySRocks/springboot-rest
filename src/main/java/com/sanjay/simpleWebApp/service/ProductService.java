@@ -18,4 +18,11 @@ public class ProductService {
     {
         return products;
     }
+
+    public Product getProductById(int prodId)
+    {
+        return products.stream()
+                .filter(p-> prodId == p.getProdId())
+                .findFirst().get();
+    }
 }
