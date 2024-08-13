@@ -32,4 +32,19 @@ public class ProductController {
 
         return "Product Added!";
     }
+
+    @PutMapping("/products")
+    public String updateProduct(@RequestBody Product prod)
+    {
+        service.updateProduct(prod);
+        return "Product Updated!";
+    }
+
+    @DeleteMapping("/products/{prodId}")
+    public String deleteProduct(@PathVariable int prodId)
+    {
+        service.deleteProduct(prodId);
+
+        return "Product deleted!";
+    }
 }
